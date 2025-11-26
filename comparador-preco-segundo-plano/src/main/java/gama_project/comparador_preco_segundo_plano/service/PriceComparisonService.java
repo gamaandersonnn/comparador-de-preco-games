@@ -1,11 +1,17 @@
-package service;
+package gama_project.comparador_preco_segundo_plano.service;
 
-import entity.dto.PriceComparisonResponse;
-import entity.dto.StorePriceDTO;
+import gama_project.comparador_preco_segundo_plano.entity.dto.PriceComparisonResponse;
+import gama_project.comparador_preco_segundo_plano.entity.dto.StorePriceDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import gama_project.comparador_preco_segundo_plano.scraper.EpicScraper;
+import gama_project.comparador_preco_segundo_plano.scraper.GogScraper;
+import gama_project.comparador_preco_segundo_plano.scraper.NuuvemScraper;
+import gama_project.comparador_preco_segundo_plano.scraper.SteamScraper;
 
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 @Service
 public class PriceComparisonService {
@@ -24,7 +30,7 @@ public class PriceComparisonService {
 
     public PriceComparisonResponse comparePrices(String gameName){
         // chama os Scrappers
-        List<StorePriceDTO> storePrices = new List<StorePriceDTO>();
+        List<StorePriceDTO> storePrices = new ArrayList<>();
 
         storePrices.add(steamScraper.search(gameName));
         storePrices.add(gogScraper.search(gameName));

@@ -1,4 +1,4 @@
-package entity.dto;
+package gama_project.comparador_preco_segundo_plano.entity.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

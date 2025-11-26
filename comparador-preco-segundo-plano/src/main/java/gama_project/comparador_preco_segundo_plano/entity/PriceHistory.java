@@ -1,4 +1,4 @@
-package entity;
+package gama_project.comparador_preco_segundo_plano.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -17,6 +17,7 @@ public class PriceHistory {
     private double price;
     private LocalDateTime checkedAt;
 
-    @ManyToMany
+    @ManyToOne
+    @JoinColumn(name = "game_id")
     private Game game;
 }

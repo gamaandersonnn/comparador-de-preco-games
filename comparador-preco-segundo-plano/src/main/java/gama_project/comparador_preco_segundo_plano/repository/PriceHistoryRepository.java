@@ -1,6 +1,6 @@
-package repository;
+package gama_project.comparador_preco_segundo_plano.repository;
 
-import entity.PriceHistory;
+import gama_project.comparador_preco_segundo_plano.entity.PriceHistory;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
